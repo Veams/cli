@@ -1,7 +1,6 @@
 <p align="center"><img src="http://www.veams.org/img/svg/icons/veams-std.svg">
 <br>
 <br>
-<a href="http://badge.fury.io/js/veams-cli"><img src="https://badge.fury.io/js/veams-cli.svg" alt="NPM version" /></a>
 <a href="https://gitter.im/Sebastian-Fitzner/Veams?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/Sebastian-Fitzner/Veams.svg" alt="Gitter Chat" /></a>
 </p>
 
@@ -14,17 +13,20 @@
 ## Documentation
 
 Veams-cli gives you the possibility to 
-- install Veams-JS
-- install Veams-Components (all or single components)
-- install custom components (based on Veams-Component blueprints)
-- install template helpers
-- install grunt modules
 - scaffold a new project
 - scaffold a new component from scratch
+- scaffold a custom blueprint from scratch
+- install Veams Components
 
 ## Installation
 
-Install `veams-cli` via: `npm install -g veams-cli`.
+Install the `cli` via: 
+
+### NPM 
+
+```bash
+npm install -g @veams/cli
+```
 
 ## Usage 
 
@@ -34,7 +36,7 @@ Here you can find help instructions how you can use veams-cli:
 
 |Command     | Shortcut | Description |
 |------------|----------|-------------------------------------------------------|
-|add     | -a | Add a component or block to your project (@see Command: add) |
+|generate    | -a | Add a component or custom blueprint to your project (@see Command: generate) |
 |help    | -h | Show the help. |
 |install | -i | Install extensions (@see Command: install). |
 |new     | -n | Create something new (@see Command: new) |
@@ -48,22 +50,18 @@ Here you can find help instructions how you can use veams-cli:
 |blueprint [name] | bp | Create a new blueprint from scratch.   | `veams new blueprint accordion` |
 |project  | p | Create a new project from scratch.     | `veams new project` |
 
-### Command: add
+### Command: generate
 
 |Arguments | Shortcut | Description                            | Example |
 |----------|----------|----------------------------------------|---------|
-|block [name] | b | Add a block to your project  | `veams add block navigation` |
-|component [name] | c | Add a component to your project   | `veams add component slider` |
-|custom [name] [folder]  | cu | Add a custom type to your project | `veams add custom myFolder` |
-|utility [name] | u | Add an utility to your project   | `veams add utility grid-col` |
+|component [name] | c | Add a component to your project   | `veams generate component slider` |
+|utility [name] | u | Add an utility to your project   | `veams generate utility grid-col` |
+|bp [name] |  | You can also add custom blueprints   | `veams generate react-container article` |
 
 ### Command: install
 
 |Arguments              | Shortcut | Description                         | Example |
 |-----------------------|----------|-------------------------------------|--------|
 |blueprint [path] [type]| bp | Install a blueprint based on Veams.  | `veams install blueprint C:\blueprint\slider component` |
-|bower-component [registryName] [name] [type] | bc | Install a bower-component based on Veams. | `veams install bower-component custom-slider slider component (--S)` |
-|grunt-module       | gm | Install a specific grunt module.    | `veams install grunt-module` |
-|veams-block [name] | vb | Install a specific veams-block. | `veams install veams-block overlay (--S)` |
 |veams-component [name] | vc | Install a specific veams-component. | `veams install veams-component slider (--S)` |
 |veams-utility [name] | vu | Install a specific veams-utility. | `veams install veams-utility grid (--S)` |
