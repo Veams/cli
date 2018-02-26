@@ -9,11 +9,11 @@ const helpers = require('../../lib/utils/helpers');
  * ============================================== */
 
 /**
- * Install extensions.
+ * Generate extensions.
  *
  * @param {Array} args - Arguments in bash
  */
-module.exports = async function add(args) {
+module.exports = async function generate(args) {
 	const alias = Veams.DATA.aliases.types;
 	const projectConfig = Veams.DATA.projectConfig();
 	const projectType = projectConfig.projectType;
@@ -40,7 +40,7 @@ module.exports = async function add(args) {
 		return;
 	}
 
-	helpers.message('cyan', 'Starting to scaffold a new ' + type + '  ...');
+	helpers.message('cyan', '@veams/cli :: Starting to scaffold a new ' + type + '  ...');
 
 	const config = Veams.getBlueprintConfig({name, type});
 	const fullPath = `${config.path}/${config.name}`;
@@ -50,7 +50,9 @@ module.exports = async function add(args) {
 		await Veams.runGenerator(Veams.generators.blueprint, `${config.type} ${config.name} ${config.path} --config ${skipFilesOption}`, `${config.name}`);
 
 		if (!skip) {
-			await Veams.updateImportFiles(config.path, config.name);
+			let importPaths = await Veams.getComponentSettings(config.path, config.name);
+
+			await Veams.updateImportFiles(importPaths.importStylePath, importPaths.importScriptPath);
 			Veams.insertBlueprint(fullPath);
 
 			if (projectType === 'single-page-app') {
@@ -58,7 +60,7 @@ module.exports = async function add(args) {
 			}
 		}
 
-		helpers.message('green', helpers.msg.success(`${config.name} was successfully created in ${config.path}/${config.name}`))
+		helpers.message('green', `@veams/cli :: ${config.name} was successfully created in ${config.path}/${config.name}`)
 	} catch (err) {
 		helpers.message('red', helpers.msg.error(err))
 	}

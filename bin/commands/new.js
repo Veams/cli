@@ -34,11 +34,11 @@ module.exports = async function (args) {
 
 		case Veams.DATA.aliases.types.bp:
 			if (!options) {
-				return helpers.message('yellow', helpers.msg.warning('You have to provide a name for your blueprint!'));
+				return helpers.message('yellow', helpers.msg.warning('@veams/cli :: You have to provide a name for your blueprint!'));
 			}
 
 			try {
-				helpers.message('cyan', 'Starting to scaffold a new blueprint  ...');
+				helpers.message('cyan', '@veams/cli :: Starting to scaffold a new blueprint  ...');
 				await Veams.runGenerator(Veams.generators.blueprint, `${options} --config`, 'Blueprint');
 				helpers.message('green', helpers.msg.success(`Blueprint`));
 			} catch (err) {
@@ -48,6 +48,6 @@ module.exports = async function (args) {
 			break;
 
 		default:
-			helpers.message('yellow', helpers.msg.warning('Sorry, you do not have defined a valid argument for a new scaffold.'));
+			helpers.message('yellow', helpers.msg.warning('@veams/cli :: Sorry, you do not have defined a valid argument for a new scaffold.'));
 	}
 };

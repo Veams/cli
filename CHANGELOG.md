@@ -37,5 +37,7 @@
 ### v1.2.13
 - added better utilitities support
 
-### v1.2.12
-- added events.js to endpoints
+### v1.0.0-rc1
+- Add to namespace
+- Change add to generate
+- Add yarn package manager

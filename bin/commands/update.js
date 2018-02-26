@@ -12,7 +12,7 @@ const helpers = require('../../lib/utils/helpers');
  * Update function of extensions.
  */
 module.exports = async function update() {
-	helpers.message('cyan', 'Updating Veams ...');
+	helpers.message('cyan', '@veams/cli :: Updating Veams ...');
 
 	try {
 		await Veams.npmInstall('veams-cli -g');

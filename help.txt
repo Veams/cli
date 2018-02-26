@@ -4,12 +4,12 @@ veams command [arguments]
 
 Command  | Short | Description
 ---------|-------|--------------------------------------------------------
-add      | -a    | Add component, block to project (@see Command: add)
+generate | -g    | Generate component or other blueprints (@see Command: generate)
 help     | -h    | Show the help.
 install  | -i    | Install extensions (@see install section)
 new      | -n    | Create something new (@see new section)
-update   | -u    | Update veams-cli and all packages.
-version  | -v    | Show VEAMS version.
+update   | -u    | Update @veams/cli and all packages.
+version  | -v    | Show Veams version.
 
 
 Command: new
@@ -20,23 +20,20 @@ blueprint | bp    | Create a new blueprint from scratch.
 project   | p     | Create a new project from scratch.
 
 
-Command: add
+Command: generate
+The command is connected to the blueprints object in your veams-cli.json,
+see:
 ==============================================================================
 Arguments               | Short | Description
 ------------------------|-------|---------------------------------------------
-block [name]            | b     | Add a block to your project
-custom [name] [folder]  | cu    | Add a custom type to your project
 component [name]        | c     | Add a component to your project
 utility [name]          | u     | Add an utility to your project
 
 
 Command: install
 ===============================================================================
-Arguments                    | Short | Description
+Arguments                   | Short | Description
 ----------------------------|-------|------------------------------------------
 blueprint [path] [type]     | bp    | Install a blueprint based on Veams.
-bower-component [r] [n] [t] | bc    | Install a bower-component based on Veams.
-grunt-module                | gm    | Install a specific grunt module.
-veams-block [name]          | vb    | Install a specific veams-block.
-veams-component [name]      | vc    | Install a specific veams-component.
-veams-utility [name]        | vu    | Install a specific veams-utility.
+veams-component [name]      | vc    | Install a specific @veams/component.
+veams-utility [name]        | vu    | Install a specific @veams/utility.

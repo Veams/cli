@@ -1,6 +1,7 @@
 /* ==============================================
  * Requirements
  * ============================================== */
+const fs = require('fs-extra');
 const Veams = require('../../lib/veams');
 const helpers = require('../../lib/utils/helpers');
 
@@ -9,7 +10,7 @@ const helpers = require('../../lib/utils/helpers');
  * Helper functions
  * ============================================== */
 
-async function installNpmComponent({registryName, options = '', name, type = 'component'}) {
+async function installComponent({registryName, options = '', name, type = 'component'}) {
 	if (!name) {
 		helpers.message('yellow', helpers.msg.warning('Please provide the name!'));
 		return;
@@ -21,12 +22,18 @@ async function installNpmComponent({registryName, options = '', name, type = 'co
 		const dest = `${config.path}/${config.name}`;
 
 		Veams
-			.npmInstall(registryName, options)
+			.installPkg(registryName, options)
 			.then(() => {
 				return helpers.copy({
 					src,
 					dest
 				});
+			})
+			.then(() => {
+				let stylePath = `${dest}/styles/${name}`;
+				let scriptPath = fs.pathExistsSync(`${dest}/scripts/${name}.js`) ? `${dest}/scripts/${name}` : '';
+
+				return Veams.updateImportFiles(stylePath, scriptPath);
 			})
 			.then(() => {
 				Veams.insertBlueprint(dest);
@@ -69,9 +76,9 @@ module.exports = async function (args) {
 			registryName = Veams.extensions.componentId + '-' + component;
 			options = args.join(' ');
 
-			helpers.message('cyan', 'Downloading ' + registryName + ' ...');
+			helpers.message('cyan', '@veams/cli :: Downloading ' + registryName + ' ...');
 
-			await installNpmComponent({
+			await installComponent({
 				registryName,
 				options,
 				name: component,
@@ -85,9 +92,9 @@ module.exports = async function (args) {
 			registryName = Veams.extensions.utilityId + '-' + vuName;
 			options = args.join(' ');
 
-			helpers.message('cyan', 'Downloading ' + registryName + ' ...');
+			helpers.message('cyan', '@veams/cli :: Downloading ' + registryName + ' ...');
 
-			await installNpmComponent({
+			await installComponent({
 				registryName,
 				options,
 				name: vuName,
@@ -103,7 +110,7 @@ module.exports = async function (args) {
 			const config = Veams.getBlueprintConfig({name, type});
 			const dest = `${config.path}/${config.name}`;
 
-			helpers.message('cyan', 'Starting to install a local blueprint  ...');
+			helpers.message('cyan', '@veams/cli :: Starting to install a local blueprint  ...');
 
 			await helpers.copy({
 				src,
@@ -115,6 +122,6 @@ module.exports = async function (args) {
 			break;
 
 		default:
-			console.log('Sorry, you do not have defined a valid installation argument.');
+			console.log('@veams/cli :: Sorry, you do not have defined a valid installation argument.');
 	}
 };
