@@ -1,7 +1,7 @@
 {
 	"name": "@veams/cli",
 	"homepage": "http://veams.org/",
-	"version": "1.0.0-rc3",
+	"version": "1.0.0-rc4",
 	"description": "Veams command line interface",
 	"author": "Sebastian Fitzner",
 	"repository": {
@@ -9,34 +9,31 @@
 		"url": "git://github.com/Veams/cli"
 	},
 	"dependencies": {
-		"@veams/generator-veams": "^1.0.0-rc1",
+		"@veams/generator-veams": "^1.0.0-rc7",
 		"babel": "^6.23.0",
 		"babel-cli": "^6.26.0",
-		"babel-generator": "^6.26.0",
+		"babel-generator": "^6.26.1",
 		"babel-plugin-transform-runtime": "^6.23.0",
 		"babel-polyfill": "^6.26.0",
-		"babel-preset-env": "^1.6.0",
+		"babel-preset-env": "^1.7.0",
 		"babel-preset-stage-0": "^6.16.0",
 		"babel-preset-stage-1": "^6.24.1",
 		"babel-register": "^6.26.0",
 		"babel-runtime": "^6.26.0",
 		"babel-traverse": "^6.26.0",
 		"babylon": "^6.18.0",
-		"chalk": "^2.1.0",
+		"chalk": "^2.4.1",
 		"child-process-promise": "^2.2.1",
-		"fs-extra": "^5.0.0",
-		"gonzales-pe": "^4.2.2",
+		"fs-extra": "^6.0.1",
+		"gonzales-pe": "^4.2.3",
 		"inserter": "^1.1.2",
 		"path": "^0.12.7",
-		"prettier": "^1.7.4",
-		"update-notifier": "^2.2.0",
-		"yeoman-environment": "^2.0.4"
+		"prettier": "^1.12.1",
+		"update-notifier": "^2.5.0",
+		"yeoman-environment": "^2.0.6"
 	},
 	"preferGlobal": true,
 	"bin": {
 		"veams": "./bin/cli.js"
-	},
-	"devDependencies": {
-		"fs-extra": "^5.0.0"
 	}
 }
