@@ -4,10 +4,10 @@ veams command [arguments]
 
 Command  | Short | Description
 ---------|-------|--------------------------------------------------------
-generate | -g    | Generate component or other blueprints (@see Command: generate)
+generate | -g    | Generate blueprint based templates (@see: generate).
 help     | -h    | Show the help.
-install  | -i    | Install extensions (@see install section)
-new      | -n    | Create something new (@see new section)
+install  | -i    | Install extensions (@see: install)
+new      | -n    | Create something new (@see: new)
 update   | -u    | Update @veams/cli and all packages.
 version  | -v    | Show Veams version.
 
@@ -35,5 +35,5 @@ Command: install
 Arguments                   | Short | Description
 ----------------------------|-------|------------------------------------------
 blueprint [path] [type]     | bp    | Install a blueprint based on Veams.
-veams-component [name]      | vc    | Install a specific @veams/component.
-veams-utility [name]        | vu    | Install a specific @veams/utility.
+component [name]            | c    | Install a specific @veams/component.
+utility [name]              | u    | Install a specific @veams/utility.

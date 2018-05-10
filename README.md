@@ -36,7 +36,7 @@ Here you can find help instructions how you can use veams-cli:
 
 |Command     | Shortcut | Description |
 |------------|----------|-------------------------------------------------------|
-|generate    | -a | Add a component or custom blueprint to your project (@see Command: generate) |
+|generate    | -g | Add a component or custom blueprint to your project (@see Command: generate) |
 |help    | -h | Show the help. |
 |install | -i | Install extensions (@see Command: install). |
 |new     | -n | Create something new (@see Command: new) |
@@ -63,5 +63,5 @@ Here you can find help instructions how you can use veams-cli:
 |Arguments              | Shortcut | Description                         | Example |
 |-----------------------|----------|-------------------------------------|--------|
 |blueprint [path] [type]| bp | Install a blueprint based on Veams.  | `veams install blueprint C:\blueprint\slider component` |
-|veams-component [name] | vc | Install a specific veams-component. | `veams install veams-component slider (--S)` |
-|veams-utility [name] | vu | Install a specific veams-utility. | `veams install veams-utility grid (--S)` |
+|component [name] | c | Install a specific veams-component. | `veams install component slider (--S)` |
+|utility [name] | u | Install a specific veams-utility. | `veams install utility grid (--S)` |
