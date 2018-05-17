@@ -15,7 +15,7 @@ module.exports = async function update() {
 	helpers.message('cyan', '@veams/cli :: Updating Veams ...');
 
 	try {
-		await Veams.npmInstall('veams-cli -g');
+		await Veams.npmInstall('@veams/cli -g');
 		helpers.message('green', helpers.msg.success('Veams'));
 
 	} catch (err) {
