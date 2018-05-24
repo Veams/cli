@@ -22,7 +22,7 @@ module.exports = async function generate(args) {
 	let name;
 
 	if (projectConfig.blueprints && projectConfig.blueprints[type]) {
-		skip = projectConfig.blueprints[type] || skip;
+		skip = projectConfig.blueprints[type].skipImports || skip;
 	}
 
 	if (args.length > 1) {
@@ -47,6 +47,7 @@ module.exports = async function generate(args) {
 
 	try {
 		let skipFilesOption = skip ? '--skipDefaults' : '';
+
 		await Veams.runGenerator(Veams.generators.blueprint, `${config.type} ${config.name} ${config.path} --config ${skipFilesOption}`, `${config.name}`);
 
 		if (!skip) {
