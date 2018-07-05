@@ -1,7 +1,7 @@
 {
 	"name": "@veams/cli",
 	"homepage": "http://veams.org/",
-	"version": "1.0.0-rc9",
+	"version": "1.0.0-rc10",
 	"description": "Veams command line interface",
 	"author": "Sebastian Fitzner",
 	"repository": {
@@ -9,7 +9,7 @@
 		"url": "git://github.com/Veams/cli"
 	},
 	"dependencies": {
-		"@veams/generator-veams": "^1.0.0-rc13",
+		"@veams/generator-veams": "^1.0.0-rc20",
 		"babel": "^6.23.0",
 		"babel-cli": "^6.26.0",
 		"babel-generator": "^6.26.1",
