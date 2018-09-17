@@ -1,4 +1,9 @@
-## Wbat can Veams do for you?
+[//]: # ({{#wrapWith "content-section"}})
+
+[//]: #     ({{#wrapWith "grid-row"}})
+[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-6"}})
+
+## What can Veams do for you?
 
 Veams contains a variety of generators, means you have a lot of flexibility in there. Let's put it in examples: 
 
@@ -10,6 +15,9 @@ Veams contains a variety of generators, means you have a lot of flexibility in t
 
 When you can answer one question with `yeeahh`, then you have found the right tool! You only need to install our lovely CLI. 
 
+[//]: #     ({{/wrapWith}})
+[//]: #     ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-6"}})
+
 ## Installation
 
 Be sure you have NodeJS installed. With that in place you can easily install the `cli` via: 
@@ -19,3 +27,6 @@ npm install -g @veams/cli
 ```
 
 [//]: # ({{> video }})
+[//]: #         ({{/wrapWith}})
+[//]: #     ({{/wrapWith}})
+[//]: # ({{/wrapWith}})

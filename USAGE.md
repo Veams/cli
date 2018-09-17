@@ -1,3 +1,8 @@
+[//]: # ({{#wrapWith "content-section"}})
+
+[//]: #     ({{#wrapWith "grid-row"}})
+[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-8"}})
+
 ## Usage 
 
 The CLI has a some commands you can execute. To see all commands open up the terminal and type in: 
@@ -61,3 +66,7 @@ With the `install` command you can integrate already existing `blueprints` into 
 |blueprint [path] [type]| bp | Install a blueprint based on Veams.  | `veams install blueprint C:\blueprint\slider component` |
 |component [name] | c | Install a specific veams-component. | `veams install component slider (--S)` |
 |utility [name] | u | Install a specific veams-utility. | `veams install utility grid (--S)` |
+
+[//]: #         ({{/wrapWith}})
+[//]: #     ({{/wrapWith}})
+[//]: # ({{/wrapWith}})
