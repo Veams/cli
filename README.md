@@ -5,7 +5,9 @@
 
 ## What can Veams do for you?
 
-Veams contains a variety of generators, means you have a lot of flexibility in there. Let's put it in examples: 
+Veams contains a variety of generators, means you have a lot of flexibility in there. 
+
+Let's put it in examples: 
 
 1. You want to create a React App with React-Router, Redux, Redux-Observables and RxJS?
 1. You want to create a powerful, fast and scalable Static Page App? 
@@ -20,7 +22,9 @@ When you can answer one question with `yeeahh`, then you have found the right to
 
 ## Installation
 
-Be sure you have NodeJS installed. With that in place you can easily install the `cli` via: 
+> Make sure you have installed NodeJS (>=6.x). 
+
+With that in place you can easily install the `cli` via: 
 
 ```bash
 npm install -g @veams/cli
