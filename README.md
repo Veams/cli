@@ -17,9 +17,6 @@ Let's put it in examples:
 
 When you can answer one question with `yeeahh`, then you have found the right tool! You only need to install our lovely CLI. 
 
-[//]: #     ({{/wrapWith}})
-[//]: #     ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-6"}})
-
 ## Installation
 
 > Make sure you have installed NodeJS (>=6.x). 
@@ -30,7 +27,9 @@ With that in place you can easily install the `cli` via:
 npm install -g @veams/cli
 ```
 
-[//]: # ({{> video }})
+[//]: #     ({{/wrapWith}})
+[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-6"}})
+[//]: #             ({{> video }})
 [//]: #         ({{/wrapWith}})
 [//]: #     ({{/wrapWith}})
 [//]: # ({{/wrapWith}})
