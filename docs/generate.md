@@ -3,7 +3,11 @@
 [//]: #     ({{#wrapWith "grid-row"}})
 [//]: #         ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-8"}})
 
-One of the main features in `@veams/cli` is the scaffolding part of blueprints.
+One of the main features in `@veams/cli` is the scaffolding part of so called blueprints. 
+This can be a component, react container, service or anything else. 
+
+As default and fallback `@veams/cli` is generating a component for you which is optimized for the `VEAMS` framework.
+But you can customize the whole generation process to your needs. 
 
 [//]: #         ({{/wrapWith}})
 [//]: #     ({{/wrapWith}})
@@ -53,9 +57,9 @@ veams -g c app/core/components/my-component-name
 - installation of provided blueprint templates possible
 - custom types? No problem!
 
-Means, to scaffold blueprints is not limited to `Veams`.
+Means, to scaffold blueprints is not limited to ``VEAMS``.
 
-You can use it in React, Angular, Vue, Veams or even non javascript projects.
+You can use it in React, Angular, Vue, `VEAMS` or even non javascript projects.
 
 [//]: #         ({{/wrapWith}})
 [//]: #     ({{/wrapWith}})
