@@ -1,7 +1,7 @@
 [//]: # ({{#wrapWith "content-section"}})
 
 [//]: #     ({{#wrapWith "grid-row"}})
-[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-8"}})
+[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-tablet-l-8"}})
 
 One of the main features in `@veams/cli` is the scaffolding part of so called blueprints. 
 This can be a component, react container, service or anything else. 
@@ -48,7 +48,7 @@ veams -g c app/core/components/my-component-name
 [//]: # ({{#wrapWith "content-section"}})
 
 [//]: #     ({{#wrapWith "grid-row"}})
-[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-mobile-l-8"}})
+[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-tablet-l-8"}})
 
 ### Main features in a nutshell
 
