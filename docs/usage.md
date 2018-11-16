@@ -1,3 +1,8 @@
+[//]: # ({{#wrapWith "content-section"}})
+
+[//]: #     ({{#wrapWith "grid-row"}})
+[//]: #         ({{#wrapWith "grid-col" colClasses="is-col-tablet-l-8"}})
+
 ## Usage 
 
 The CLI has a some commands you can execute. To see all commands open up the terminal and type in: 
@@ -13,7 +18,7 @@ But we always want to provide a better explanation. Here we go:
 
 ## Commands
 
-Veams contains some major commands. These are: 
+`VEAMS` contains some major commands. These are: 
 
 |Command     | Shortcut | Description |
 |------------|----------|-------------------------------------------------------|
@@ -42,7 +47,7 @@ The CLI guides you through a few questions and scaffolds a projects based on you
 ### Command: generate
 
 The `generate` command generates a `blueprint` into your current project. 
-This could be a component, container or store for a React App, a new Mock API endpoint or a Veams Component.
+This could be a component, container or store for a React App, a new Mock API endpoint or a `VEAMS` Component.
 
 It is up to you how the `blueprint` can look like. [You want to know more?](https://www.veams.org/docs/blueprints/) 
 
@@ -58,7 +63,11 @@ With the `install` command you can integrate already existing `blueprints` into 
 
 |Arguments              | Shortcut | Description                         | Example |
 |-----------------------|----------|-------------------------------------|--------|
-|blueprint [path] [type]| bp | Install a blueprint based on Veams.  | `veams install blueprint C:\blueprint\slider component` |
+|blueprint [path] [type]| bp | Install a blueprint based on `VEAMS`.  | `veams install blueprint C:\blueprint\slider component` |
 |component [name] | c | Install a specific veams-component. | `veams install component slider (--S)` |
 |package [sugar name] | p | Install a custom external package from `npm`. | `veams install package my-custom-npm-slider slider` |
 |utility [name] | u | Install a specific veams-utility. | `veams install utility grid (--S)` |
+
+[//]: #         ({{/wrapWith}})
+[//]: #     ({{/wrapWith}})
+[//]: # ({{/wrapWith}})
