@@ -60,4 +60,5 @@ With the `install` command you can integrate already existing `blueprints` into 
 |-----------------------|----------|-------------------------------------|--------|
 |blueprint [path] [type]| bp | Install a blueprint based on Veams.  | `veams install blueprint C:\blueprint\slider component` |
 |component [name] | c | Install a specific veams-component. | `veams install component slider (--S)` |
+|package [sugar name] | p | Install a custom external package from `npm`. | `veams install package my-custom-npm-slider slider` |
 |utility [name] | u | Install a specific veams-utility. | `veams install utility grid (--S)` |

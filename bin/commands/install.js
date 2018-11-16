@@ -2,27 +2,32 @@
  * Requirements
  * ============================================== */
 const fs = require('fs-extra');
+const chalk = require('chalk');
 const Veams = require('../../lib/veams');
 const helpers = require('../../lib/utils/helpers');
-
 
 /* ==============================================
  * Helper functions
  * ============================================== */
 
-async function installComponent({registryName, options = '', name, type = 'component'}) {
+async function installComponent({
+	                                registryName,
+	                                options = '',
+	                                name,
+	                                type = 'component'
+                                }) {
 	if (!name) {
 		helpers.message('yellow', helpers.msg.warning('Please provide the name!'));
 		return;
 	}
 
 	try {
-		const config = Veams.getBlueprintConfig({name, type});
+		const config = Veams.getBlueprintConfig({ name, type });
+
 		const src = `${process.cwd()}/node_modules/${registryName}`;
 		const dest = `${config.path}/${config.name}`;
 
-		Veams
-			.installPkg(registryName, options)
+		Veams.installPkg(registryName, options)
 			.then(() => {
 				return helpers.copy({
 					src,
@@ -31,7 +36,9 @@ async function installComponent({registryName, options = '', name, type = 'compo
 			})
 			.then(() => {
 				let stylePath = `${dest}/styles/${name}`;
-				let scriptPath = fs.pathExistsSync(`${dest}/scripts/${name}.js`) ? `${dest}/scripts/${name}` : '';
+				let scriptPath = fs.pathExistsSync(`${dest}/scripts/${name}.js`)
+					? `${dest}/scripts/${name}`
+					: '';
 
 				return Veams.updateImportFiles(stylePath, scriptPath);
 			})
@@ -39,7 +46,6 @@ async function installComponent({registryName, options = '', name, type = 'compo
 				Veams.insertBlueprint(dest);
 				helpers.message('green', helpers.msg.success(registryName));
 			});
-
 	} catch (err) {
 		helpers.message('red', helpers.msg.error(err));
 	}
@@ -57,7 +63,7 @@ async function installComponent({registryName, options = '', name, type = 'compo
 module.exports = async function (args) {
 	const extArgument = Veams.DATA.aliases.exts;
 	const typeArgument = Veams.DATA.aliases.types;
-	let argument = args[0];
+	let argument = args[ 0 ];
 	let options = '';
 	let registryName = '';
 
@@ -68,7 +74,7 @@ module.exports = async function (args) {
 		options = args.join(' ');
 	}
 
-	argument = extArgument[argument] || typeArgument[argument] || argument;
+	argument = extArgument[ argument ] || typeArgument[ argument ] || argument;
 
 	switch (argument) {
 		case Veams.DATA.aliases.exts.vc:
@@ -76,7 +82,10 @@ module.exports = async function (args) {
 			registryName = Veams.extensions.componentId + '-' + component;
 			options = args.join(' ');
 
-			helpers.message('cyan', '@veams/cli :: Downloading ' + registryName + ' ...');
+			helpers.message(
+				'cyan',
+				'@veams/cli :: Downloading ' + registryName + ' ...'
+			);
 
 			await installComponent({
 				registryName,
@@ -92,7 +101,10 @@ module.exports = async function (args) {
 			registryName = Veams.extensions.utilityId + '-' + vuName;
 			options = args.join(' ');
 
-			helpers.message('cyan', '@veams/cli :: Downloading ' + registryName + ' ...');
+			helpers.message(
+				'cyan',
+				'@veams/cli :: Downloading ' + registryName + ' ...'
+			);
 
 			await installComponent({
 				registryName,
@@ -103,14 +115,46 @@ module.exports = async function (args) {
 
 			break;
 
+		case Veams.DATA.aliases.exts.p:
+			const pName = args.shift();
+			const customPackageName = args.shift();
+			registryName = pName;
+			options = args.join(' ');
+
+			if (!customPackageName) {
+				helpers.message('red',
+`
+@veams/cli :: Please provide a name for your external package as last parameter like:
+${chalk.italic.bold('  veams install package my-npm-accordion accordion')}
+`);
+				return;
+			}
+
+			helpers.message(
+				'cyan',
+				'@veams/cli :: Downloading ' + registryName + ' ...'
+			);
+
+			await installComponent({
+				registryName,
+				options,
+				name: customPackageName,
+				type: 'package'
+			});
+
+			break;
+
 		case Veams.DATA.aliases.types.bp:
 			const src = args.shift();
-			const type = args[0] || 'component';
+			const type = args[ 0 ] || 'component';
 			const name = helpers.getLastFolder(bpPath);
-			const config = Veams.getBlueprintConfig({name, type});
+			const config = Veams.getBlueprintConfig({ name, type });
 			const dest = `${config.path}/${config.name}`;
 
-			helpers.message('cyan', '@veams/cli :: Starting to install a local blueprint  ...');
+			helpers.message(
+				'cyan',
+				'@veams/cli :: Starting to install a local blueprint  ...'
+			);
 
 			await helpers.copy({
 				src,
@@ -122,6 +166,8 @@ module.exports = async function (args) {
 			break;
 
 		default:
-			console.log('@veams/cli :: Sorry, you do not have defined a valid installation argument.');
+			console.log(
+				'@veams/cli :: Sorry, you do not have defined a valid installation argument.'
+			);
 	}
 };
