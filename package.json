@@ -1,7 +1,7 @@
 {
 	"name": "@veams/cli",
 	"homepage": "http://veams.org/",
-	"version": "1.0.0-rc11",
+	"version": "1.0.0-rc12",
 	"description": "Veams command line interface",
 	"author": "Sebastian Fitzner",
 	"repository": {
