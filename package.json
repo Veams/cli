@@ -9,7 +9,7 @@
 		"url": "git://github.com/Veams/cli"
 	},
 	"dependencies": {
-		"@veams/generator-veams": "^1.0.0-rc20",
+		"@veams/generator-veams": "^1.0.0-rc22",
 		"babel": "^6.23.0",
 		"babel-cli": "^6.26.0",
 		"babel-generator": "^6.26.1",
