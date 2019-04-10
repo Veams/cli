@@ -2,8 +2,7 @@
 /**
  * ES Support
  */
-require("babel-polyfill");
-require('babel-core/register');
+require("@babel/polyfill");
 
 /**
  * Represents a file based cli.

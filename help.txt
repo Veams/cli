@@ -35,5 +35,6 @@ Command: install
 Arguments                   | Short | Description
 ----------------------------|-------|------------------------------------------
 blueprint [path] [type]     | bp    | Install a blueprint based on Veams.
-component [name]            | c    | Install a specific @veams/component.
-utility [name]              | u    | Install a specific @veams/utility.
+component [name]            | c     | Install a specific @veams/component.
+utility [name]              | u     | Install a specific @veams/utility.
+package [sugar name]        | p     | Install an external package from `npm`.
