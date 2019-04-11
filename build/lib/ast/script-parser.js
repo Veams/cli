@@ -13,7 +13,7 @@ var prettier = require('prettier'); // use custom plugin to transform the source
 
 module.exports = function (file, options) {
   return new _promise["default"](function (resolve, reject) {
-    var code = babel.transform(file, {
+    var code = babel.transformSync(file, {
       plugins: [[importer, options]]
     }).code;
     resolve(code);

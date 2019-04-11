@@ -4,7 +4,7 @@ const prettier = require('prettier');
 // use custom plugin to transform the source
 module.exports = (file, options) => {
 	return new Promise((resolve, reject) => {
-		let code = babel.transform(file, {
+		let code = babel.transformSync(file, {
 			plugins: [
 				[
 					importer, options
@@ -13,7 +13,6 @@ module.exports = (file, options) => {
 		}).code;
 
 		resolve(code);
-
 		reject('Error :: Parsing of script goes wrong.');
 	});
 };
